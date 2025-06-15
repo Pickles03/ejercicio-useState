@@ -7,7 +7,7 @@ function App() {
     const [newName, setNewName] = useState('');
 
     return (
-        <div>
+        <div className="rendered-div">
             <h2>Teacher name: {name}</h2>
             <ul>
                 <li onClick = {() => setName('Data')}>Data</li>
