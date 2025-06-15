@@ -6,14 +6,22 @@ function App() {
     const [name, setName] = useState('Sofia');
     const [newName, setNewName] = useState('');
 
+    const changeName = (e) => {
+        e.preventDefault();
+        if(newName.trim() !== '') {
+            setName(newName);
+            setNewName('');
+        }
+    };
+
     return (
-        <div className="rendered-div">
-            <h2>Teacher name: {name}</h2>
-            <ul>
-                <li onClick = {() => setName('Data')}>Data</li>
-                <li onClick = {() => setName('Reyes')}>Reyes</li>
-                <li onClick = {() => setName('Yolanda')}>Yolanda</li>
-            </ul>
+        <div className='rendered-div'>
+            <h2>Teacher's name: {name}</h2>
+
+            <form onSubmit={changeName}>
+                <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="Enter new name" />
+                <button type="submit">Change name</button>
+            </form>
         </div>
     )
 }
