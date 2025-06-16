@@ -29,3 +29,22 @@ function App() {
 export default App;
 
 const root = ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+
+/* basic insruction on how to use useState
+
+function App () {
+    const [name, setNewName] = useSate('Sofia');
+
+    return (
+        <> 
+            <h2>Teacher's name: {name}</h2>
+            <ul>
+                <li onCLick={() => setNewName('Data')}>Data</li>   we need the callback function "() => ..." since it prevents an infinite loop
+                <li onCLick={() => setNewName('Reyes)}>Reyes</li>
+                <li onClick={() => setNewName('Celia)}>Celia</li>
+            </ul>
+        </>)
+}
+
+*/
